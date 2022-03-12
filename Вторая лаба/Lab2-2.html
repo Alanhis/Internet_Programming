@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body>
+Имя:
+<input type="text" class="imp_name" name="name"> <br>
+<br>Пароль:
+<input type="text" class="imp_password" name="password"> <br>
+<br>Подтверждение пароля:
+<input type="text" class="imp_conf" name="conf_passford"> <br>
+<br>Email:
+<input type="text" class="imp_email" name="email"> <br>
+<br>Тема сообщения:
+<input type="text" class="tema" name="tema"> <br>
+<br>Сообщение:
+<input type="text" class="soobs" name="soobs"> <br>
+<button class="test"> test </button>
+<button type="reset" class="reset"> reset </button>
+<script>
+
+$( ".test" ).click(function() {
+	if($(".imp_name").val().length < 1) {
+	  	$( ".imp_name" ).css("background-color", "red");
+	}
+	if($(".imp_password").val().length < 4) {
+	  	$( ".imp_password" ).css("background-color", "red");
+	}
+	if($(".imp_password").val() != $(".imp_conf").val()) {
+	  	$( ".imp_conf" ).css("background-color", "red");
+	}
+	if($(".imp_email").val().indexOf("@") < -1) {
+	  	$( ".imp_email" ).css("background-color", "red");
+	}
+	if($(".soobs").val().length < 10) {
+	  	$( ".soobs" ).css("background-color", "red");
+	}
+});
+</script>
+
+</body>
+</html>

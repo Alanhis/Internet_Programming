@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Лабораторная работа 3</title>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+<ul id="reserch">
+
+</ul>
+<button  id="add" >Добавить</button>
+
+<script>
+$( "#add" ).click(function() {
+  $.get(
+    "/3.php",
+    {
+     kol:5,
+     tek:2
+    },
+    addNewNum
+  );
+ function onAjaxSuccess(data)
+{
+  // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
+  $("#reserch").html(data);
+}
+ function addNewNum(data)
+{
+$().ready(function(){
+$.get(
+    "/setdata_3.php",
+    {
+      Page: data
+    },
+   onAjaxSuccess
+  );
+});
+}
+});
+
+</script>
+
+</body>
+</html>

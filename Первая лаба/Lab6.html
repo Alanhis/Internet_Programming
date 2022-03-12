@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>for</title>
+<meta charset="utf-8">
+</head>
+<body>
+<h1>Таблица</h1>
+<script>
+var table =" "
+for(var r=0;r<6;r++){
+	table+= "<tr>"; // Создаем строку таблицы
+	table+= "<td> 2<sup>"+ r +"</sup>"+ "</td>"; // Создаем первую ячейку таблицы
+	table+= "<td>" + Math.pow(2,r) + "</td>"; // Создаем вторую ячейку таблицы
+	table+="</tr>"; // Закрываем строку ?
+}
+document.write("<table border=1>" + table + "</table>");
+</script>
+</body>
+</html>

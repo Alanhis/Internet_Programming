@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Лабораторная работа 3b</title>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+<h3>Тут поля ввода</h3>
+<p> Имя: <input type="text" id="UserName" ></p>
+<p> Email <input type="email" id="UserEmail"> </p>
+<p> Текст: <input type="text" id="UserText"></p>
+<button id="add" >Добавить</button>
+<ul id="reserch">
+
+</ul>
+<script>
+$( "#add" ).click(function() {
+  $.get("/getdata_3b.php",
+  {
+  	Name: document.getElementById("UserName").value,
+  	Email: document.getElementById("UserEmail").value,
+  	Text: document.getElementById("UserText").value
+  },
+
+  	);
+
+});
+$().ready(function(){
+$.get(
+  	"/setdata_3b.php",
+  onAjaxSuccess
+  );
+  function onAjaxSuccess(data)
+{
+  // Здесь мы получаем данные, отправленные сервером и выводим их на экран.
+  $("#reserch").html(data);
+}
+});
+</script>
+
+</body>
+</html>

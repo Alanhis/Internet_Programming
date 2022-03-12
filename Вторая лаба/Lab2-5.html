@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+  <style >
+  	#happy_div {
+    width: 100px;
+    height: 50px;
+    padding: 15px;
+    font-weight: 900;
+    border: 1px groove green;
+}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+<p class="drag"> Попробуйте составить имя Алан </p>
+
+<script>
+        function allowDrop( ev ) {
+          ev.preventDefault();
+        }
+        function drag( ev ) {
+          ev.dataTransfer.setData( "Text", ev.target.id );
+        }
+        function drop( ev ) {
+          var data = ev.dataTransfer.getData( "Text" );
+          ev.target.appendChild( document.getElementById(data));
+          ev.preventDefault();
+        }
+    </script>
+        <div id = "happy_div" ondrop = "drop(event)" ondragover = "allowDrop(event)"> </div>
+        <br>
+        <span id = "test1" draggable = "true" ondragstart = "drag(event)">А</span>
+        <span id = "test2" draggable = "true" ondragstart = "drag(event)">А</span>
+        <span id = "test3" draggable = "true" ondragstart = "drag(event)">Л</span>
+        <span id = "test4" draggable = "true" ondragstart = "drag(event)">Н</span>
+    </body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script>
+$(document).ready(function(){
+$( ".left" ).click(function() {
+	$("#coffee").animate({ left: "+=100"},"fast");
+});
+$( ".right" ).click(function() {
+	$("#coffee").animate({opacity: "1", left: "-=100"},"fast");
+});
+$( ".up" ).click(function() {
+	$("#coffee").animate({opacity: "1", top: "-=100"},"fast");
+});
+$( ".down" ).click(function() {
+	$("#coffee").animate({opacity: "1", top: "+=100"},"fast");
+});
+});
+</script>
+</head>
+<body>
+<button class="left"> Влево</button>
+<button class="right"> Вправо</button>
+<button class="up"> Вверх</button>
+<button class="down"> Вниз</button>
+<br>
+<img  id ="coffee" src="https://i.pinimg.com/564x/18/49/8e/18498ef2e9974c0a8a6fd9354e52c3da--coffee-shot-cup-of-coffee.jpg" style="position: absolute;">
+
+
+</body>
+</html>

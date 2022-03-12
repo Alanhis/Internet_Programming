@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>click demo</title>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+<body>
+<div id="mouse"></div>
+
+<script>
+$()
+$( document ).on( "mousemove", function( event ) {
+  $( "#mouse" ).text( "Позиция X: " + event.pageX + ", Позиция Y: " + event.pageY );
+});
+</script>
+
+
+</body>
+</html>

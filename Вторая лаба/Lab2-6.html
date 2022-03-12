@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+<script>
+function clickCounter() {
+  if (typeof(Storage) !== "undefined") {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.getElementById("result").innerHTML = "Уже проголосовало " + localStorage.clickcount + " человека.";
+  } else {
+    document.getElementById("result").innerHTML = "К сожалению ваш браузер не поддежривает функции данного сайта:(";
+  }
+}
+</script>
+</head>
+<body>
+<p> Самый обычный заголовок для вопроса. </p>
+<br>
+Делал ли Алан эту работу на коленке, используя только интернет и очень много костылей ?
+<br>
+<input type="radio" onclick="clickCounter()" name="Answer" value="Yep"> Конечно же да<Br>
+<input type="radio"onclick="clickCounter()" name="Answer" value="Maybe"> Может быть немного<Br>
+<input type="radio"onclick="clickCounter()" name="Answer" value="No"> Нет, только тыканье в небо и куча кофе.<Br>
+
+<div id="result"></div>
+
+
+</body>
+</html>

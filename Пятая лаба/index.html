@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Лабораторная работа №5. Хисматуллин Алана Рустамовича</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        В данной лабораторной работе производится выполнение задания №5(Поиск наибольшего значения в массиве произвольной длинны).<br>
+        Ход работы:
+        <li>Сформировать список</li>
+        <ul>
+            <li>Сформировать случайное число</li>
+            <li>Проверить подходил ли оно для создания массива</li>
+            <li>Создать массив</li>
+        </ul>
+        <li>Внести случайные данные</li>
+        <ul>
+            <li>Сформировать цикл с числом ввыше</li>
+            <li>Создать случайные числа как описано в задании</li>
+            <li>Внести значения</li>
+        </ul>
+        Результат работы в консоли <br>
+        <script>
+            function getRandomArbitrary(min, max) { 
+                return Math.random() * (max - min) + min;
+            }
+            function labwork(){
+                var mas=[];
+                var orgPer = Math.random()*100; 
+                for(var i =0; i<orgPer;i++){
+                    var newData= getRandomArbitrary(-100,100);
+                    mas[i]=newData;
+                    
+                }
+                console.log(mas)
+                console.log("Максимальное число случайного цикла: "+Math.max.apply(null, mas))
+                console.log("Минимальное число случайного цикла: "+Math.min.apply(null, mas))
+                return 
+            }
+            labwork()
+        </script>
+    </body>
+</html>
